@@ -1,7 +1,7 @@
-int cols = 20;   // cantidad de columnas
-int rows = 20;   // cantidad de filas
+int cols = 20;   
+int rows = 20;   
 
-float[][] distancias;  // matriz para guardar distancias
+float[][] distancias;
 
 int cellW, cellH;
 
