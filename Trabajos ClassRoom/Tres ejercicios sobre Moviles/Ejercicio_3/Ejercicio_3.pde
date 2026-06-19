@@ -24,7 +24,7 @@ void draw() {
   float distancia = dist(
     A.pos.x, A.pos.y,
     B.pos.x, B.pos.y
-    );
+  );
 
   if (distancia < A.radio + B.radio) {
 
@@ -51,7 +51,7 @@ class Mover {
     vel = new PVector(
       random(-2, 2),
       random(-1, 1)
-      );
+    );
 
     acc = new PVector();
   }
@@ -67,11 +67,24 @@ class Mover {
 
     acc.mult(0);
 
-    if (pos.y > height-radio) {
-
-      pos.y = height-radio;
-
+    if (pos.y > height - radio) {
+      pos.y = height - radio;
       vel.y *= -0.8;
+    }
+
+    if (pos.y < radio) {
+      pos.y = radio;
+      vel.y *= -0.8;
+    }
+
+    if (pos.x < radio) {
+      pos.x = radio;
+      vel.x *= -0.8;
+    }
+
+    if (pos.x > width - radio) {
+      pos.x = width - radio;
+      vel.x *= -0.8;
     }
   }
 
@@ -80,8 +93,8 @@ class Mover {
     ellipse(
       pos.x,
       pos.y,
-      radio*2,
-      radio*2
-      );
+      radio * 2,
+      radio * 2
+    );
   }
 }
